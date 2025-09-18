@@ -1,0 +1,181 @@
+:root {
+  --red: #e50914;
+  --surface: rgba(255, 255, 255, 0.04);
+  --stroke: rgba(255, 255, 255, 0.12);
+  --text: #eaeaea;
+  --muted: #bdbdbd;
+  --bg: #111;
+}
+
+.recs-empty-wrap {
+  display: grid;
+  place-items: center;
+  padding: 48px 16px 90px;
+}
+
+.recs-empty-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+  border-radius: 16px;
+  max-width: 860px;
+  width: 100%;
+  padding: 28px 22px;
+  color: var(--text);
+  text-align: center;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+  animation: recEnter 420ms ease-out both;
+}
+
+/* subtle neon edge */
+.recs-empty-glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 18px;
+  background:
+    radial-gradient(90% 50% at 50% 0%, rgba(229, 9, 20, 0.22), transparent 60%),
+    radial-gradient(90% 50% at 50% 100%, rgba(229, 9, 20, 0.16), transparent 60%);
+  filter: blur(14px);
+  z-index: -1;
+}
+
+.recs-empty-title {
+  margin: 0 0 6px;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: .3px;
+}
+
+.recs-empty-sub {
+  margin: 0 auto 18px;
+  max-width: 640px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* chip button row (replaces .recs-badges) */
+.recs-chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0 0 18px;
+}
+
+/* pill buttons styled like badges */
+.recs-chip {
+  appearance: none;
+  border: 1px solid var(--stroke);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+
+.recs-chip:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.recs-chip:active {
+  transform: translateY(0);
+}
+
+.recs-chip:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.55), 0 0 0 4px rgba(255, 255, 255, 0.12);
+}
+
+/* skeleton quotes (shimmer placeholders) */
+.recs-skeletons {
+  display: grid;
+  gap: 10px;
+  margin: 8px 0 20px;
+}
+
+.skeleton-quote {
+  height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(
+      90deg,
+      rgba(255,255,255,0.06) 25%,
+      rgba(255,255,255,0.11) 37%,
+      rgba(255,255,255,0.06) 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.6s infinite linear;
+  border: 1px solid var(--stroke);
+}
+
+/* ctas */
+.recs-cta-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.recs-cta {
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+}
+
+.recs-cta-primary {
+  color: #fff;
+  background: linear-gradient(180deg, #ff3b45, var(--red));
+  box-shadow: 0 10px 24px rgba(229, 9, 20, 0.35);
+}
+.recs-cta-primary:hover { transform: translateY(-1px); box-shadow: 0 14px 30px rgba(229, 9, 20, 0.45); }
+
+.recs-cta-secondary {
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid var(--stroke);
+}
+.recs-cta-secondary:hover { transform: translateY(-1px); }
+
+.recs-cta-link {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.recs-cta-link:hover { opacity: 0.9; }
+
+.recs-foot {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* animations */
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes recEnter {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* responsive */
+@media (max-width: 520px) {
+  .recs-empty-title { font-size: 1.45rem; }
+  .skeleton-quote { height: 52px; }
+}
+
+.recs-chip {
+  text-decoration: none;   /* remove underline */
+  display: inline-block;   /* makes it behave like a button */
+}
