@@ -49,7 +49,7 @@ const Recommendations: React.FC = () => {
             className="recs-chip"
             onClick={() => openNew("https://github.com/dhrish-s")}
           >
-            🧠 ML &amp; 3D Rendering
+            🧠 Open Source
           </button>
 
           <button
