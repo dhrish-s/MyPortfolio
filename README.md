@@ -27,7 +27,7 @@ Welcome to my personal portfolio project! 🚀 This website highlights my work, 
 
 ## 📧 Contact  
 
-- 💼 Portfolio: [dhrish-s.com]([https://dhrish-s.com](https://my-portfolio-sigma-two-9320mbyqd2.vercel.app/))  
+- 💼 Portfolio: [dhrish-s.com]((https://my-portfolio-sigma-two-9320mbyqd2.vercel.app/))  
 - 📧 Email: [dsuman@usc.edu](mailto:dsuman@usc.edu)  
 - 🔗 [LinkedIn](https://linkedin.com/in/dhrish-s)  
 - 💻 [GitHub](https://github.com/dhrish-s)  
