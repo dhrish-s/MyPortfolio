@@ -1,7 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './TopPicksRow.css';
-import { FaPassport, FaCode, FaBriefcase, FaCertificate, FaHandsHelping, FaProjectDiagram, FaEnvelope, FaMusic, FaBook } from 'react-icons/fa';
+import {
+  FaPassport, FaCode, FaBriefcase, FaCertificate, FaHandsHelping,
+  FaProjectDiagram, FaEnvelope, FaMusic, FaBook
+} from 'react-icons/fa';
 
 type ProfileType = 'recruiter' | 'developer' | 'stalker' | 'adventure';
 
@@ -41,8 +44,7 @@ const topPicksConfig = {
     { title: "Contact Me", imgSrc: "https://picsum.photos/seed/connect/250/200", route: "/contact-me", icon: <FaEnvelope /> },
     { title: "Certifications", imgSrc: "https://picsum.photos/seed/medal/250/200", route: "/certifications", icon: <FaCertificate /> }
   ]
-};
-
+} as const;
 
 const TopPicksRow: React.FC<TopPicksRowProps> = ({ profile }) => {
   const navigate = useNavigate();
@@ -51,13 +53,24 @@ const TopPicksRow: React.FC<TopPicksRowProps> = ({ profile }) => {
   return (
     <div className="top-picks-row">
       <h2 className="row-title">Today's Top Picks for {profile}</h2>
+
+      {/* This div is the "container" from the article */}
       <div className="card-row">
-      {topPicks.map((pick, index) => (
-          <div 
-            key={index} 
-            className="pick-card" 
+        {topPicks.map((pick, index) => (
+          <div
+            key={index}
+            className="pick-card"
             onClick={() => navigate(pick.route)}
-            style={{ animationDelay: `${index * 0.2}s` }} // Adding delay based on index
+            style={{ animationDelay: `${index * 0.15}s` }}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                navigate(pick.route);
+              }
+            }}
+            aria-label={pick.title}
           >
             <img src={pick.imgSrc} alt={pick.title} className="pick-image" />
             <div className="overlay">
