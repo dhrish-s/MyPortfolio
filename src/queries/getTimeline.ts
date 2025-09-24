@@ -4,8 +4,9 @@ import { TimelineItem } from '../types';
 
 const GET_TIMELINE = `
 {
-  allTimelines {
-   	name
+  allTimelines(orderBy: order_ASC) {
+    order
+    name
     timelineType
     title
     techStack
