@@ -1,39 +1,188 @@
-.vertical-timeline-element-content {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+/* Namespaced with wx-* to avoid affecting other pages */
 
-.vertical-timeline-element-content:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-
-.timeline-container {
+/* Loading state */
+.wx-loading {
+  color: #ddd;
   text-align: center;
-  padding: 20px;
-  margin-top: 5rem;
+  padding: 3rem 1rem;
+  font-size: 1rem;
+  opacity: 0.85;
 }
 
-.timeline-title {
+/* Header */
+.wx-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* Center children horizontally */
+  text-align: center;
+  margin-top: 4.5rem;
+  margin-bottom: 1.25rem;
+  padding: 0 1rem;
+}
+
+.wx-title {
   font-size: 2rem;
-  color: #fff;
-  font-weight: bold;
-  margin-bottom: 40px;
-  display: inline-block;
-  text-align: center;
-  opacity: 0; /* Start invisible */
-  transform: translateY(20px); /* Start slightly lower */
-  animation: fadeInUp 2s ease-in-out both; /* Animation properties */
+  font-weight: 700;
+  color: #ffe4ec; /* soft pink accent */
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* Center icon + text row */
+  gap: 10px;
+  margin: 0 auto;
 }
 
-/* Define the keyframes for the fade-in-up animation */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.wx-title .wx-icon {
+  font-size: 1.6em;
+  flex-shrink: 0;
+}
+
+.wx-subtitle {
+  margin-top: 0.35rem;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.75);
+  animation: wx-fadeInUp 900ms 100ms ease both;
+}
+
+@keyframes wx-fadeInUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Timeline wrapper */
+.wx-timeline-wrapper {
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+  padding: 0 1rem;
+}
+
+/* Card base from library */
+.wx-card .vertical-timeline-element-content {
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.wx-card .vertical-timeline-element-content:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+  border-color: rgba(255,255,255,0.22);
+}
+
+/* Subtle top highlight */
+.wx-card .vertical-timeline-element-content::before {
+  content: "";
+  position: absolute;
+  inset: -1px -1px auto -1px;
+  height: 4px;
+  background: linear-gradient(90deg,rgba(255,255,255,0.25),rgba(255,255,255,0));
+  pointer-events: none;
+}
+
+/* Our own date chip (inside the card, top-right) */
+.wx-date-inset {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: var(--wx-accent, linear-gradient(135deg,#a1c4fd,#c2e9fb));
+  color: #1b1b1b;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  border: 1px solid rgba(0,0,0,0.08);
+  line-height: 1;
+  z-index: 1;
+}
+
+/* Type chip inside the card */
+.wx-chip {
+  display: inline-block;
+  color: #1b1b1b;
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: var(--wx-accent, linear-gradient(135deg,#a1c4fd,#c2e9fb));
+}
+
+/* Headings */
+.wx-role {
+  margin: 2px 0 2px;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+.wx-org {
+  margin: 0 0 8px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.92);
+}
+
+/* Tech badges */
+.wx-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 10px;
+}
+
+.wx-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: rgba(255,255,255,0.9);
+  font-size: 0.75rem;
+}
+
+/* Bullets */
+.wx-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 12px 0 4px;
+}
+
+.wx-li {
+  position: relative;
+  padding-left: 22px;
+  margin: 8px 0;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.55;
+}
+
+.wx-li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(255,255,255,0.2));
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
+}
+
+/* Soften default arrow drop-shadow */
+.wx-card .vertical-timeline-element-content-arrow {
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
+}
+
+/* Icon hover pop */
+.vertical-timeline-element-icon {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.vertical-timeline-element-icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 10px rgba(255,255,255,0.06), 0 12px 28px rgba(0,0,0,0.5) !important;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .wx-timeline-wrapper { padding: 0 0.5rem; }
+  .wx-title { font-size: clamp(1.45rem, 1.2rem + 1.2vw, 2rem); }
+  .wx-li { margin: 6px 0; }
 }
