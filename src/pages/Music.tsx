@@ -5,7 +5,21 @@ import "./Music.css";
 import albumCover1 from "../images/Hotelcalifornia.jpg"; // Hotel California — The Eagles
 import albumCover2 from "../images/ac-dc.jpg";            // Back in Black — AC/DC
 import albumCover3 from "../images/guns-n-roses.webp";    // Appetite for Destruction — Guns N' Roses
-
+import albumCover4 from "../images/Layla.jpg";              // Layla — Derek & The Dominos
+import albumCover5 from "../images/Patd.jpg"; 
+import albumCover6 from "../images/DeepPurple.jpg";
+import albumCover7 from "../images/BonJovi.jpg";
+import albumCover8 from "../images/BBKing.jpg";
+import albumCover9 from "../images/MuddyWater.jpg";
+import albumCover10 from "../images/Melvin.jpg";
+import albumCover11 from "../images/PrateekKuhad.jpg";
+import albumCover12 from "../images/The1975.jpeg";
+import albumCover13 from "../images/Moon.jpg";
+import albumCover14 from "../images/karz.jpg";
+import albumCover15 from "../images/disco.jpg";
+import albumCover16 from "../images/qurbani.jpg";
+import albumCover17 from "../images/chandini.jpg";
+import albumCover18 from "../images/mrindia.jpg";
 // A tidy fallback (SVG data URI)
 const FALLBACK =
   "data:image/svg+xml;utf8," +
@@ -102,16 +116,16 @@ const rows: Row[] = [
       { id: "hotel", title: "Hotel California",    artist: "The Eagles",    cover: albumCover1 },
       { id: "back",  title: "Back in Black",       artist: "AC/DC",         cover: albumCover2 },
       { id: "sweet", title: "Sweet Child O' Mine", artist: "Guns N' Roses", cover: albumCover3 },
-      { id: "arena", title: "Arena Nights",        artist: "Midnight Mile", cover: P(1025) },
-      { id: "static",title: "Static Stars",        artist: "Neon Harbor",   cover: P(1002) },
+      { id: "arena", title: "Layla",               artist: "Derek and the Dominos", cover: albumCover4 },
+      { id: "static",title: "New Perspective",        artist: "Panic! At The Disco",   cover:albumCover5 },
     ],
   },
   {
     key: "classicrock",
     title: "Classic Rock",
     songs: [
-      { id: "classic1", title: "Road to Nowhere",         artist: "Old Flame",      cover: P(1050) },
-      { id: "hotel2",   title: "Hotel California (Live)", artist: "The Eagles",     cover: albumCover1 },
+      { id: "classic1", title: "Smoke on the Water",         artist: "Deep Purple",      cover: albumCover6 },
+      { id: "hotel2",   title: "Take it Easy",            artist: "The Eagles",     cover: albumCover1 },
       { id: "shoot",    title: "Shoot to Thrill",         artist: "AC/DC",          cover: albumCover2 },
     ],
   },
@@ -119,7 +133,7 @@ const rows: Row[] = [
     key: "hardrock",
     title: "Hard Rock",
     songs: [
-      { id: "iron",  title: "Iron Riff",       artist: "Molten Wire", cover: P(1011) },
+      { id: "iron",  title: "Livin’ on a Prayer",       artist: "Bon Jovi", cover: albumCover7 },
       { id: "train", title: "Nightrain",       artist: "Guns N' Roses", cover: albumCover3 },
       { id: "thund", title: "Thunderstruck",   artist: "AC/DC",        cover: albumCover2 },
     ],
@@ -128,29 +142,29 @@ const rows: Row[] = [
     key: "blues",
     title: "Blues",
     songs: [
-      { id: "delta",   title: "Delta Mist",      artist: "River Tone",  cover: P(1031) },
-      { id: "broken",  title: "Broken Strings",  artist: "Moody Light", cover: P(1027) },
-      { id: "midnite", title: "Midnight Shuffle",artist: "Blue Lantern",cover: P(1015) },
+      { id: "delta",   title: "The Thrill Is Gone",      artist: "B.B. King ",  cover: albumCover8 },
+      { id: "broken",  title: "Mannish Boy",  artist: "Muddy Waters", cover: albumCover9 },
+      { id: "midnite", title: "I'll Play the Blues for You",artist: "Melvin Taylor",cover: albumCover10},
     ],
   },
   {
     key: "alternative",
     title: "Alternative",
     songs: [
-      { id: "paper", title: "Paper Planets", artist: "Static Avenue", cover: P(1024) },
-      { id: "grey",  title: "Grey Skyline",  artist: "Low Tide",      cover: P(1018) },
-      { id: "waves", title: "Waves Apart",   artist: "Sky Division",  cover: P(1008) },
+      { id: "paper", title: "Oh Love", artist: "Prateek Kuhad", cover: albumCover11 },
+      { id: "grey",  title: "It's Not Living (If It's Not With You)",  artist: "The 1975",      cover: albumCover12 },
+      { id: "waves", title: "Fly Me to the Moon",   artist: "Frank Sinatra",  cover: albumCover13 },
     ],
   },
   {
     key: "hindi",
     title: "Hindi Classics (’70s–’80s)",
     songs: [
-      { id: "karz",   title: "Om Shanti Om",           artist: "Karz (1980)",             cover: P(1067) },
-      { id: "disco",  title: "I Am a Disco Dancer",    artist: "Disco Dancer (1982)",     cover: P(1074) },
-      { id: "qurb",   title: "Aap Jaisa Koi",          artist: "Qurbani (1980)",          cover: P(1080) },
-      { id: "chand",  title: "Mere Haathon Mein",      artist: "Chandni (1989)",          cover: P(1049) },
-      { id: "mrindia",title: "Hawa Hawai",             artist: "Mr. India (1987)",        cover: P(1062) },
+      { id: "karz",   title: "Om Shanti Om",           artist: "Karz (1980)",             cover: albumCover14 },
+      { id: "disco",  title: "I Am a Disco Dancer",    artist: "Disco Dancer (1982)",     cover: albumCover15 },
+      { id: "qurb",   title: "Aap Jaisa Koi",          artist: "Qurbani (1980)",          cover: albumCover16 },
+      { id: "chand",  title: "Mere Haathon Mein",      artist: "Chandni (1989)",          cover: albumCover17 },
+      { id: "mrindia",title: "Hawa Hawai",             artist: "Mr. India (1987)",        cover: albumCover18 },
     ],
   },
   {

@@ -5,8 +5,6 @@ import atomicHabits from "../images/atomic_habits.jpg";
 import richDadPoorDad from "../images/rich_dad_poor_dad.jpg";
 import alchemist from "../images/alchemist.jpg";
 import eatThatFrog from "../images/eat_that_frog.jpg";
-import vijayanikiAidhuMetlu from "../images/vijayaniki_aidu_metlu.jpg";
-import venneloAdapilla from "../images/vennelo_adapilla.jpeg";
 
 const P = (id: number) => `https://picsum.photos/id/${id}/700/700`;
 
@@ -49,10 +47,7 @@ const books: Book[] = [
   { title: "Rich Dad Poor Dad", author: "Robert Kiyosaki", imgSrc: richDadPoorDad, description: "Simple mental models for assets, cash flow, and financial literacy." },
   { title: "The Alchemist", author: "Paulo Coelho", imgSrc: alchemist, description: "A fable about following your ‘Personal Legend’—still magical." },
   { title: "Eat That Frog", author: "Brian Tracy", imgSrc: eatThatFrog, description: "Tactics to defeat procrastination and ship meaningful work." },
-  { title: "Vijayaniki Aidhu Metlu", author: "Yandamoori Veerendranath", imgSrc: vijayanikiAidhuMetlu, description: "Classic Telugu inspiration on disciplined self-improvement." },
-  { title: "Vennelo Adapilla", author: "Yandamoori Veerendranath", imgSrc: venneloAdapilla, description: "Beloved Telugu romantic novel with a thoughtful core." },
 
-  // extra underrated picks
   { title: "Finite and Infinite Games", author: "James P. Carse", imgSrc: P(1025), description: "Play to continue the play, not just to win." },
   { title: "The Scout Mindset", author: "Julia Galef", imgSrc: P(1016), description: "Truth-seeking > tribe-defending. Update beliefs without ego." },
   { title: "How to Take Smart Notes", author: "Sönke Ahrens", imgSrc: P(1050), description: "Zettelkasten method—turn reading into output." },
