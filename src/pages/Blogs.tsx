@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from "react";
+import React, {useRef} from "react";
 import "./Blogs.css";
 import { FaExternalLinkAlt } from "react-icons/fa";
 

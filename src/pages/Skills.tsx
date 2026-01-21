@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import {
   SiRubyonrails, SiTypescript, SiPostgresql, SiMysql, SiKubernetes, SiGooglecloud,
-  SiSpringboot, SiPhp, SiNetlify, SiHeroku, SiHtml5, SiCss3, SiRabbitmq, SiImessage,
+  SiSpringboot, SiPhp, SiNetlify, SiHeroku, SiRabbitmq, SiImessage,
   SiTensorflow, SiPytorch, SiScikitlearn, SiOpencv, SiThreedotjs, SiOpengl,
   SiApachespark, SiApachekafka, SiJavascript, SiCplusplus, SiMongodb
 } from "react-icons/si";
