@@ -76,28 +76,50 @@ const Projects: React.FC = () => {
 
   return (
     <div className="projects-container">
-      <div className="projects-grid">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="project-card"
-            style={{ '--delay': `${index * 0.1}s` } as React.CSSProperties}
+<div className="projects-grid">
+  {projects.map((project, index) => {
+    const pdfUrl = project.link?.url;
+    const hasPdf = Boolean(pdfUrl);
+
+    return (
+      <div
+        key={index}
+        className={`project-card ${hasPdf ? 'is-clickable' : ''}`}
+        style={{ '--delay': `${index * 0.1}s` } as React.CSSProperties}
+      >
+        {hasPdf ? (
+          <a
+            className="project-image-link"
+            href={pdfUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Open ${project.title} PDF`}
+            title="Click to open PDF"
           >
             <img src={project.image.url} alt={project.title} className="project-image" />
-            <div className="project-details">
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <div className="tech-used">
-                {project.techUsed.split(', ').map((tech, i) => (
-                  <span key={i} className="tech-badge">
-                    {techIcons[tech] || "🔧"} {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <span className="project-hover-hint">Click to open PDF</span>
+          </a>
+        ) : (
+          <div className="project-image-link">
+            <img src={project.image.url} alt={project.title} className="project-image" />
           </div>
-        ))}
+        )}
+
+        <div className="project-details">
+          <h3>{project.title}</h3>
+          <p>{project.description}</p>
+          <div className="tech-used">
+            {project.techUsed.split(', ').map((tech, i) => (
+              <span key={i} className="tech-badge">
+                {techIcons[tech] || "🔧"} {tech}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
+    );
+  })}
+</div>
     </div>
   );
 };

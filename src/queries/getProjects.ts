@@ -11,6 +11,9 @@ const GET_PROJECTS = `
       image {
         url
       }
+        link {
+          url
+        }
     }
   }
 `;
